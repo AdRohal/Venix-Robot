@@ -4,8 +4,6 @@ import datetime
 
 def calculator_robot():
     print("Hello! I'm Venix, your calculator bot. Let's chat about numbers!")
-
-
     current_year = datetime.datetime.now().year
     print(f"Venix: I was created in {current_year}.")
     print("You can exit at any time by typing 'exit', 'quit', or 'bye'.")
