@@ -1,54 +1,40 @@
+import random
 import datetime
 
-bot_name = 'Venix'
-
-# Get the current year
-current_year = datetime.datetime.now().year
-
-print(f"Hello Friend! My name is {bot_name}.")
-print(f"I was created in {current_year}.")
-print("By 'AdRohal'.")
-print("Ready for some Math?")
 
 def calculator_robot():
+    print("Hello! I'm Venix, your calculator bot. Let's chat about numbers!")
+
+
+    current_year = datetime.datetime.now().year
+    print(f"Venix: I was created in {current_year}.")
+    print("You can exit at any time by typing 'exit', 'quit', or 'bye'.")
     while True:
-        print("1. Addition")
-        print("2. Subtraction")
-        print("3. Multiplication")
-        print("4. Division")
-        print("5. Exit")
+        user_input = input("You: ")
 
-        choice = input("Enter your choice (1-5): ")
-
-        if choice == '5':
-            print("Exiting the calculator robot. Goodbye!")
+        if user_input.lower() in ['exit', 'quit', 'bye']:
+            print("Venix: Goodbye! If you have more questions, feel free to ask.")
             break
 
-        if choice not in ['1', '2', '3', '4']:
-            print("Invalid choice. Please enter a valid option.")
-            continue
+        responses = [
+            "Venix: Hmm, interesting. Let's calculate that!",
+            "Venix: I'm ready to crunch some numbers! What do you have for me?",
+            "Venix: Great! Give me the details, and I'll handle the math.",
+            "Venix: Numbers are my language. Fire away!",
+        ]
 
-        num1 = float(input("Enter the first number: "))
-        num2 = float(input("Enter the second number: "))
+        print(random.choice(responses))
 
-        if choice == '1':
-            result = num1 + num2
-            operation = 'Addition'
-        elif choice == '2':
-            result = num1 - num2
-            operation = 'Subtraction'
-        elif choice == '3':
-            result = num1 * num2
-            operation = 'Multiplication'
-        elif choice == '4':
-            if num2 != 0:
-                result = num1 / num2
-                operation = 'Division'
-            else:
-                print("Error: Cannot divide by zero.")
-                continue
+        if user_input.lower() in ['exit', 'quit', 'bye']:
+            print("Venix: Goodbye! If you have more questions, feel free to ask.")
+            break
 
-        print(f"{operation} result: {result}")
+        try:
+            result = eval(user_input)
+            print(f"Venix: The result is {result}")
+        except Exception as e:
+            print(f"Venix: Oops! There seems to be an error. {str(e)}")
+
 
 if __name__ == "__main__":
     calculator_robot()
