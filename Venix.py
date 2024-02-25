@@ -1,7 +1,6 @@
 import random
 import datetime
 
-
 def calculator_robot():
     print("Hello! I'm Venix, your calculator bot. Let's chat about numbers!")
     current_year = datetime.datetime.now().year
